@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #111827;
+    background-image:
+        linear-gradient(rgba(15, 23, 42, 0.68), rgba(15, 23, 42, 0.68)),
+        url('../img/kucing.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h1 {
+    color: #0f172a;
+    font-size: 34px;
+    line-height: 1.15;
+}
+
+header {
+    margin: 30px auto;
+    border-spacing: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    height: 20vh;
+    text-align: right;
+    color: black;
+    background-color: #ffffff;
+    border-color: #f8fafc;
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+.ringkasan {
+    text-align: center;
+    background-color: #dbe3ee;
+    padding: 10px;
+
+}
+
+table {
+    border: 1px solid black;
+    margin: 30px auto;
+    height: 30vh;
+    border-spacing: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    text-align: right;
+    color: white;
+    background-color: white;
+    text-align: center;
+}
+
+
+th,
+td {
+    padding: 16px;
+    border-bottom: 1px solid #dbe3ee;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+th {
+    color: #0f172a;
+    background: #e5e7eb;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+td {
+    color: #1f2937;
+    background: #ffffff;
+    font-weight: 600;
+}
+
+.btn {
+    display: flex;
+    justify-content:center;
+    padding: 18px;
+    border-radius: 8px;
+    color: #ffffff;
+    background: #2563eb;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.btn:hover {
+    background: #1d4ed8;
+}
+
+footer {
+    margin-top: 10%;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    color: black;
+    background-color: #ffffff;
+    border-color: #f8fafc;
+}
