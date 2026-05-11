@@ -11,9 +11,9 @@ body{
     flex-direction: column;
     align-items: center;
     padding-top: 45px;
-    background-image: url("https://i.imgflip.com/7z6x2u.jpg");
+    background-image: url("../img/jaim.jpg");
     background-repeat: repeat;
-    background-size: 220px;
+    background-size: 667px auto;
 }
 
 header{
@@ -105,12 +105,12 @@ input{
 }
 
 .btn-primary{
-    background: #2563eb;
+    background: #64748b;
     color: white;
 }
 
 .btn-primary:hover{
-    background: #1d4ed8;
+    background: #64748b;
 }
 
 tr:last-child td{

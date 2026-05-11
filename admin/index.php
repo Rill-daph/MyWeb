@@ -16,7 +16,7 @@ if (!isset($_SESSION["usn1"])) {
 
 <body>
     <div class="head1">
-        <img src="../assets/img/gambar1.jpg" alt="gambar" class="gambar">
+        <?= "Selamat datang, " . $_SESSION["usn1"]; ?>
     </div>
     <div class="ul">
         <nav>
