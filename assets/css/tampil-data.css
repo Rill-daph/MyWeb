@@ -73,7 +73,6 @@ nav a {
     font-size: 12px;
     font-weight: 800;
     text-decoration: none;
-    transition: background 160ms ease, color 160ms ease, transform 160ms ease;
 }
 
 .btn:hover,
@@ -96,13 +95,15 @@ nav a:hover {
     background: #64748b;
 }
 
-.btn-primary:hover {
-    background: #64748b;
+@media print {
+    button {
+        display: none;
+    }
 }
 
 table {
     overflow: hidden;
-    border-collapse: collapse;
+    /* border-collapse: collapse; */
     background: rgba(255, 255, 255, 0.94);
     border: 1px solid rgba(226, 232, 240, 0.85);
     border-radius: 6px;
@@ -165,13 +166,12 @@ table tr:hover td {
     justify-content: center;
     min-height: 32px;
     padding: 0 12px;
-    color: #2563eb;
+    color: #334155;
     background: #dbeafe;
     border-radius: 5px;
     font-size: 12px;
     font-weight: 800;
     text-decoration: none;
-    transition: background 160ms ease, transform 160ms ease;
 }
 
 .action-link:hover {

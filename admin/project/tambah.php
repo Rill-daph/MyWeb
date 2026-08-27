@@ -1,8 +1,3 @@
-<?php session_start();
-if (!isset($_SESSION['usn1'])) {
-    header("location: ../auth/login.php? belum_login=anda belum login");
-    exit();
-} ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,9 +9,6 @@ if (!isset($_SESSION['usn1'])) {
 </head>
 
 <body>
-    <?php if (isset($_GET['error'])): ?>
-        <script> alert("<?php echo $_GET['error']; ?>"); </script>
-    <?php endif; ?>
 
     <header>
         <p>Dashboard Admin</p>
@@ -25,7 +17,7 @@ if (!isset($_SESSION['usn1'])) {
     </header>
 
 
-    <form action="prses_tambah.php" method="post">
+    <form action="tambah.php" method="post">
         <table>
             <tr>
                 <td>
@@ -44,22 +36,42 @@ if (!isset($_SESSION['usn1'])) {
             <tr>
                 <td>
                     <label>Harga
-                        <input type="number" name="number" placeholder="Masukkan harga">
+                        <input type="number" name="harga" placeholder="Masukkan harga">
                     </label>
                 </td>
             </tr>
             <tr>
-                <td>
-                    <a class="btn btn-secondary" href="index.php">Kembali</a>
-                </td>
-                <td>
+                <td colspan="2" class="form-actions">
+                    <a class="btn btn-secondary" href="menu.php">Kembali</a>
                     <button class="btn btn-primary" type="submit" name="tambah">Tambah</button>
                 </td>
             </tr>
         </table>
     </form>
 
-</body>
+    <?php
+    include "../../config/koneksi.php";
 
+    if(isset($_POST['tambah'])){
+        $judul = $_POST['judul'] ?? '';
+        $desk = $_POST['desk'] ?? '';
+        $harga = $_POST['harga'] ?? '';
+
+        if ($judul === '' || $desk === '' || $harga === '') {
+            echo "<script>alert('Semua field wajib diisi.');</script>";
+        } else {
+            $query = "INSERT INTO buku (judul, deskripsi, harga) VALUES ('$judul', '$desk', '$harga')";
+            $result = mysqli_query($con, $query);
+
+            if ($result) {
+                header('location: menu.php?succsess=Data berhasil ditambahkan');
+            } else {
+                header('location: menu.php?error=Gagal menambahkan data');
+            }
+        }
+    }
+    ?>
+
+</body>
 
 </html>

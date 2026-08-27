@@ -60,10 +60,8 @@ if (!isset($_SESSION["usn1"])) {
                 </td>
             </tr>
             <tr>
-                <td>
-                    <a class="btn btn-secondary" href="index.php">Kembali</a>
-                </td>
-                <td>
+                <td colspan="2" class="form-actions">
+                    <a class="btn btn-secondary" href="menu.php">Kembali</a>
                     <button class="btn btn-primary" type="submit" name="submit">Simpan perubahan</button>
                 </td>
             </tr>
@@ -82,7 +80,7 @@ if (!isset($_SESSION["usn1"])) {
         );
 
         if ($update) {
-            header("location: index.php");
+            header("location: menu.php");
         } else {
             echo "<script>alert('Data gagal diupdate');</script>";
         }

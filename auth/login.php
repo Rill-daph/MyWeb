@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,16 +11,8 @@
 </head>
 
 <body>
-
-    <?php if (isset($_GET['belum_login'])) { ?>
-        <script>alert("<?= $_GET['belum_login'] ?>")</script>
-    <?php }
-    if (isset($_GET['logout'])) { ?>
-        <script>alert("<?= $_GET['logout'] ?>")</script>
-    <?php } ?>
-
     <div class="background"></div>
-    <form action="prses_login.php" method="post">
+    <form action="" method="post">
         <table class="card">
             <tr>
                 <td colspan="2">
@@ -42,6 +36,21 @@
             </tr>
         </table>
     </form>
+
+<?php
+if(isset($_POST['a'])){
+    $usn = $_POST["usn"];
+    $pw = $_POST["pw"];
+
+    if ($usn == "admin" && $pw == "admin123") {
+        $_SESSION['usn1'] = $usn;
+        header("location: ../admin/project/index.php");
+        exit();
+    } else {
+        header("location: login.php");
+    }
+}
+?>
 
 </body>
 
